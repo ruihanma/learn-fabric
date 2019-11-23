@@ -23,7 +23,11 @@ var circle = new fabric.Circle({
   // 对象高度 原型无效
 
   radius: 50,
+
   left: 100,
+  // 对象的左侧位置。 请注意，默认情况下，它是相对于左侧的对象。
+  // 您可以通过设置originX = {left / center / right}来更改此设置
+
   top: 100,
 
   // 对象自身样式 End //////////////////////////////////////////////////////////////////////
@@ -83,6 +87,9 @@ var circle = new fabric.Circle({
   // 控制对象角的形式 'rect' or 'circle'
 
   transparentCorners: false,
+
+  lockMovementX: false,
+  // 为“ true”时，对象水平移动被锁定
 
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
