@@ -189,6 +189,11 @@ var circle = new fabric.Circle({
   // 对象变换矩阵的存储
   // TODO 目前未看出效果
 
+  statefullCache: false,
+  // 当为true时，检查对象属性的高速缓存无效。
+  // 在某些特定情况下，您可能希望禁用此功能（喷刷，非常大的画笔，画笔组），或者如果您的应用程序不允许您修改画笔组的属性，而您想对画笔禁用。 自1.7.0起默认为false
+  // TODO 目前不知道啥意思
+
   // 缓存 End //////////////////////////////////////////////////////////////////////
 
 
@@ -245,6 +250,14 @@ var circle = new fabric.Circle({
   moveCursor: null,
   // 在画布上移动此对象时使用的默认光标值
   // TODO 目前未知用处
+
+  stateProperties: (
+    'top left width height scaleX scaleY flipX flipY originX originY transformMatrix ' +
+    'stroke strokeWidth strokeDashArray strokeLineCap strokeDashOffset strokeLineJoin strokeMiterLimit ' +
+    'angle opacity fill globalCompositeOperation shadow clipTo visible backgroundColor ' +
+    'skewX skewY fillRule paintFirst clipPath strokeUniform'
+  ).split(' '),
+  // 检查对象的状态是否已更改（fabric.Object＃hasStateChanged）以及历史记录（撤消/重做）时要考虑的属性列表
 
   // 内部含有参数 End //////////////////////////////////////////////////////////////////////
 
