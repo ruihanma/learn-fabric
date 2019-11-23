@@ -20,9 +20,10 @@ var circle = new fabric.Circle({
   // TODO 目前未看出明显差别
 
   height: 10,
-  // 对象高度 原型无效
+  // 对象高度 圆形无效
 
   radius: 50,
+  // 圆形的半径
 
   left: 100,
   // 对象的左侧位置。 请注意，默认情况下，它是相对于左侧的对象。
@@ -133,6 +134,10 @@ var circle = new fabric.Circle({
 
   padding: 10,
   // 对象及其控制边界之间的填充（以像素为单位）
+
+  rotatingPointOffset: 40,
+  // 对象控制旋转点的偏移量（通过“ hasRotatingPoint”启用时）
+  // 旋转那个线的长度
 
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
@@ -248,6 +253,10 @@ var circle = new fabric.Circle({
 
   paintFirst: `fill`,
   // 确定是先绘制填充还是笔划（“fill”或“stroke”之一）
+  // TODO 目前未知用处
+
+  perPixelTargetFind: false,
+  // 设置为“ true”时，将在画布上以像素为单位“找到”对象，而不是根据边界框
   // TODO 目前未知用处
 
   // 导出
