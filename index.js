@@ -100,6 +100,9 @@ var circle = new fabric.Circle({
   lockScalingFlip: false,
   // 如果为true，则无法通过缩放为负值来翻转对象
 
+  lockScalingX: false,
+  // 当为true时，对象水平缩放被锁定
+
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
 
