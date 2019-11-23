@@ -97,6 +97,9 @@ var circle = new fabric.Circle({
   lockRotation: false,
   // 为“ true”时，对象旋转被锁定
 
+  lockScalingFlip: false,
+  // 如果为true，则无法通过缩放为负值来翻转对象
+
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
 
