@@ -106,13 +106,16 @@ var circle = new fabric.Circle({
   lockScalingY: false,
   // 当为true时，对象垂直缩放被锁定 四角点失效
 
-  lockSkewingX: true,
+  lockSkewingX: false,
   // 为“ true”时，对象水平倾斜被锁定 边中间点失效
   // 按住shift可以倾斜操作
 
-  lockSkewingY: true,
+  lockSkewingY: false,
   // 为“ true”时，对象垂直倾斜被锁定 边中间点失效
   // 按住shift可以倾斜操作
+
+  lockUniScaling: true,
+  // 当为true时，对象非均匀缩放被锁定 边中间点消失
 
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
@@ -186,6 +189,10 @@ var circle = new fabric.Circle({
 
   includeDefaultValues: true,
   // 如果为false，则默认对象的值不包含在其序列化中
+  // TODO 目前未知用处
+
+  matrixCache: null,
+  // 对象全变换矩阵的存储
   // TODO 目前未知用处
 
   // 导出
