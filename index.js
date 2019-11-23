@@ -151,6 +151,11 @@ var circle = new fabric.Circle({
 
   objectCaching: true,
   // 当为true时，对象被缓存在另一个画布上。 当为false时，除非必要（clipPath）默认为true，否则不缓存对象
+
+  ownMatrixCache: null,
+  // 对象变换矩阵的存储
+  // TODO 目前未看出效果
+
   // 缓存 End //////////////////////////////////////////////////////////////////////
 
 
