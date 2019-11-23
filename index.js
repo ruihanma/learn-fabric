@@ -179,6 +179,7 @@ var circle = new fabric.Circle({
   // 它们会使用oCoords更新，但是在缩放或平移更改时无需更新。
   // 坐标使用@method setCoords更新。
   // 您可以计算它们而无需使用@method calcCoords（true）更新。
+  // TODO 目前未知用处
 
   oCoords: null,
   // 在画布元素坐标中描述对象的角位置。 主控件的属性为tl，mt，tr，ml，mr，bl，mb，br，mtr。
@@ -186,6 +187,7 @@ var circle = new fabric.Circle({
   // 坐标取决于以下属性：宽度，高度，scaleX，scaleY skewX，skewY，角度，strokeWidth，viewportTransform，顶部，左侧，填充。
   // 坐标使用@method setCoords更新。
   // 您可以计算它们而无需使用@method calcCoords更新。
+  // TODO 目前未知用处
 
   matrixCache: null,
   // 对象全变换矩阵的存储
