@@ -70,3 +70,5 @@ jsconfig.json
 # static source
 public/uploads
 
+.cache
+dist
