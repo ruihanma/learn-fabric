@@ -94,6 +94,9 @@ var circle = new fabric.Circle({
   lockMovementY: false,
   // 为“ true”时，对象垂直移动被锁定
 
+  lockRotation: false,
+  // 为“ true”时，对象旋转被锁定
+
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
 
