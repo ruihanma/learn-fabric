@@ -123,6 +123,25 @@ var circle = new fabric.Circle({
 
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
+  // 缓存 //////////////////////////////////////////////////////////////////////
+
+  // cacheProperties
+  // 检查高速缓存是否需要刷新时要考虑的属性列表 可以通过 statefullCache ON（或如果需要的话是惰性模式）
+  // 或通过单次调用Object.set（key，value）来检查那些属性。
+  // 如果键在此列表中，则将该对象标记为脏并在下一次渲染时刷新 含有的属性如下
+  // 'fill stroke strokeWidth strokeDashArray width height paintFirst strokeUniform' +
+  // 'strokeLineCap strokeDashOffset strokeLineJoin strokeMiterLimit backgroundColor clipPath'
+
+  noScaleCache: true,
+  // 如果为true，则在缩放期间不会更新缓存。
+  // 如果缩放比例过大，图片将变得块状，并且在缩放结束时将以正确的细节重新绘制。
+  // 此设置取决于性能和应用程序。 自1.7.0起默认为true
+  // TODO 目前未看出效果
+
+  objectCaching: true,
+  // 当为true时，对象被缓存在另一个画布上。 当为false时，除非必要（clipPath）默认为true，否则不缓存对象
+  // 缓存 End //////////////////////////////////////////////////////////////////////
+
 
   // 剪裁操作 //////////////////////////////////////////////////////////////////////
   absolutePositioned: false,
@@ -152,7 +171,7 @@ var circle = new fabric.Circle({
 
 
   // 内部含有参数 //////////////////////////////////////////////////////////////////////
-  // aCoords
+  aCoords: null,
   // 在画布对象中描述对象的角位置绝对坐标属性为tl，tr，bl，br，并描述四个主角。
   // 每个属性都是一个带有x，y，Fabric.Point实例的对象。
   // 坐标取决于以下属性：宽度，高度，scaleX，scaleY skewX，skewY，角度，strokeWidth，顶部，左侧。
@@ -161,12 +180,12 @@ var circle = new fabric.Circle({
   // 坐标使用@method setCoords更新。
   // 您可以计算它们而无需使用@method calcCoords（true）更新。
 
-  // cacheProperties
-  // 检查高速缓存是否需要刷新时要考虑的属性列表 可以通过 statefullCache ON（或如果需要的话是惰性模式）
-  // 或通过单次调用Object.set（key，value）来检查那些属性。
-  // 如果键在此列表中，则将该对象标记为脏并在下一次渲染时刷新 含有的属性如下
-  // 'fill stroke strokeWidth strokeDashArray width height paintFirst strokeUniform' +
-  // 'strokeLineCap strokeDashOffset strokeLineJoin strokeMiterLimit backgroundColor clipPath'
+  oCoords: null,
+  // 在画布元素坐标中描述对象的角位置。 主控件的属性为tl，mt，tr，ml，mr，bl，mb，br，mtr。
+  // 每个属性都是一个带有x，y和角的对象。 “ corner”属性以相似的方式包含角的交互区域的4个点。
+  // 坐标取决于以下属性：宽度，高度，scaleX，scaleY skewX，skewY，角度，strokeWidth，viewportTransform，顶部，左侧，填充。
+  // 坐标使用@method setCoords更新。
+  // 您可以计算它们而无需使用@method calcCoords更新。
 
   matrixCache: null,
   // 对象全变换矩阵的存储
