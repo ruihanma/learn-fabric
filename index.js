@@ -19,6 +19,9 @@ var circle = new fabric.Circle({
   // 向后不兼容说明：此属性用于设置globalCompositeOperation直到v1.4.12（改用`fabric.Object＃globalCompositeOperation`）
   // TODO 目前未看出明显差别
 
+  height: 10,
+  // 对象高度 原型无效
+
   radius: 50,
   left: 100,
   top: 100,
@@ -52,7 +55,7 @@ var circle = new fabric.Circle({
   hasControls: true,
   // 设置为false时，不显示对象的控件，并且不能用于操作对象 只能移动
 
-  hasRotatingPoint: false,
+  hasRotatingPoint: true,
   // 设置为“ false”时，对象的控制旋转点将不可见或无法选择
 
   centeredRotation: true,
@@ -136,6 +139,10 @@ var circle = new fabric.Circle({
   flipY: false,
   // 如果为true，则将对象渲染为垂直翻转
   // 在坐标系内 将Y轴旋转180度
+
+  hoverCursor: null,
+  // 将鼠标悬停在画布上此对象时使用的默认光标值
+  // TODO 目前未察觉用处
 
   globalCompositeOperation: `source-over`,
   // 全局合成操作 默认为source-over
