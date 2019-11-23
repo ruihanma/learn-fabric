@@ -246,7 +246,9 @@ var circle = new fabric.Circle({
   // 如果为false，则默认对象的值不包含在其序列化中
   // TODO 目前未知用处
 
-
+  paintFirst: `fill`,
+  // 确定是先绘制填充还是笔划（“fill”或“stroke”之一）
+  // TODO 目前未知用处
 
   // 导出
   excludeFromExport: false,
