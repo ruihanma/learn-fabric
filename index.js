@@ -46,6 +46,11 @@ var circle = new fabric.Circle({
   // 对象控制边界的比例因子
   // 控制框的宽度
 
+  hasBorders: true,
+  // 设置为“ false”时，不呈现对象的控制边界
+
+  hasControls: false,
+
   centeredRotation: true,
   // 设置为true时，通过控件旋转时，此对象将使用中心点作为变换的原点。 向后不兼容说明：此属性替代“ centerTransform”（布尔值）。
   // 只针对控件旋转 不针对rotate角度
