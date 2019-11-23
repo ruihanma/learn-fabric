@@ -17,7 +17,7 @@ var circle = new fabric.Circle({
   fillRule: `nonzero`,
   // 填充规则 接受两种模式 nonzero, evenodd
   // 向后不兼容说明：此属性用于设置globalCompositeOperation直到v1.4.12（改用`fabric.Object＃globalCompositeOperation`）
-  // 目前未看出明显差别
+  // TODO 目前未看出明显差别
 
   radius: 50,
   left: 100,
