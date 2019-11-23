@@ -9,7 +9,7 @@ var circle = new fabric.Circle({
   // 圆的起始角度，顺时针方向偏移，应为度，
   // 这是一个疏忽。 在下一个主要版本中可能会更改为度
 
-  // endAngle: (270 * Math.PI) / 180,
+  endAngle: (270 * Math.PI) / 180,
   // 圆弧形的端角，应为度，这是一个疏忽。 在下一个主要版本中可能会更改为度
   // 注意 这里如果fill了颜色 那么形状会变成一个残月 而不是从中心点缺失的3/4个圆饼状
 
@@ -76,6 +76,11 @@ var circle = new fabric.Circle({
   strokeMiterLimit: 4,
   // 对象笔划的最大斜接长度（用于strokeLineJoin =“ miter”）
   // TODO 目前未知效果
+
+  strokeUniform: false,
+  // 如果为“ false”，则笔画宽度将与对象成比例。
+  // 设为true时，笔划将始终与为笔划宽度输入的确切像素大小匹配。
+  // 默认为false
 
   strokeWidth: 10,
 
@@ -214,7 +219,9 @@ var circle = new fabric.Circle({
 
   statefullCache: false,
   // 当为true时，检查对象属性的高速缓存无效。
+  // 为false 是为了保证显示 可能消耗硬件性能
   // 在某些特定情况下，您可能希望禁用此功能（喷刷，非常大的画笔，画笔组），或者如果您的应用程序不允许您修改画笔组的属性，而您想对画笔禁用。 自1.7.0起默认为false
+  // PS. statefullCache为true时 同时 strokeUniform为true(描边不随图像缩放而缩放) 快速拖拽缩放 图像会出现模糊
   // TODO 目前不知道啥意思
 
   // 缓存 End //////////////////////////////////////////////////////////////////////
