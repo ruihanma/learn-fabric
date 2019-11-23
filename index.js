@@ -93,10 +93,15 @@ var circle = new fabric.Circle({
   // 如果为true，clipPath将具有相对于画布的顶部和左侧，并且不受对象转换的影响。
   // 这将使clipPath相对于画布，但仅剪切特定对象。 警告这是测试版，此功能可能会更改或重命名。 从2.4.0开始
 
-  // clipPath: new fabric.Rect({width: 10, height: 20, fill: '#f55', opacity: 0.7}),
+  clipPath: new fabric.Rect({width: 20, height: 20, fill: '#f55', opacity: 0.7, inverted: true}),
   // 无需描边即可定义其形状的裁剪区域的fabricObject。 呈现为黑色时，将在呈现对象时使用clipPath对象，并将上下文放置在对象cacheCanvas的中心。 如果希望clipPath的0,0与对象中心对齐，请使用clipPath.originX / Y来“居中”
   // 参数为各种形状的对象
   // 会将原来的图形按照传入的形状进行剪裁
+
+  inverted: false,
+  // 仅在将对象用作clipPath时才有意义。
+  // 如果为true，则clipPath将使对象从2.4.0版本开始剪辑到clipPath的外部
+  // 见clipPath的参数 反向剪裁 能够看见下方元素及背景
 
   // clipTo: ctx => ctx.arc(0, 0, 10, 0, Math.PI * 2, true),
   // 确定对象裁剪的函数（上下文作为第一个参数传递）。
@@ -157,8 +162,8 @@ var circle = new fabric.Circle({
   excludeFromExport: false,
   // 如果为true，则不会以OBJECT / JSON格式导出对象
 
-
-
 });
 
-canvas.add(circle);
+let b = new fabric.Rect({width: 20, height: 20, fill: '#f55', opacity: 0.7})
+
+canvas.add(circle, b);
