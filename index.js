@@ -34,8 +34,6 @@ var circle = new fabric.Circle({
   opacity: 1,
   // 物体的不透明度
 
-  top: 100,
-
   originX: `left`,
   // 对象转换的水平原点（“左”，“右”，“中心”之一）
   // 针对left参数计算的点 默认是从左边处开始
@@ -82,7 +80,12 @@ var circle = new fabric.Circle({
   // 设为true时，笔划将始终与为笔划宽度输入的确切像素大小匹配。
   // 默认为false
 
-  strokeWidth: 10,
+  strokeWidth: 1,
+  // 用于渲染此对象的笔触宽度
+
+  top: 100,
+  // 对象相对于画布顶部的距离。 请注意，默认情况下，它是相对于自身的顶部。 您可以通过设置originY = {top / center / bottom}来更改此设置
+
 
   // 对象自身样式 End //////////////////////////////////////////////////////////////////////
 
@@ -125,9 +128,6 @@ var circle = new fabric.Circle({
   // 如果为true，则在通过控件缩放时，此对象将使用中心点作为变换的原点。 向后不兼容说明：此属性替代“ centerTransform”（布尔值）。
   // 如果为false 缩放的点为左上角00点
 
-  cornerColor: `rgba(255,0,0)`,
-  // 控制对象角的颜色（处于活动状态时）
-
   // cornerDashArray: [1, 3],
   // 指定对象控件的破折号模式的数组（hasBorder必须为true）
 
@@ -140,7 +140,12 @@ var circle = new fabric.Circle({
   cornerStyle: `circle`,
   // 控制对象角的形式 'rect' or 'circle'
 
+  cornerColor: `rgba(255,0,0)`,
+  // 控制对象角的颜色（处于活动状态时）
+
   transparentCorners: false,
+  // 设置为true时，对象的控制角在内部呈现为透明（即笔触而不是填充）
+  // 控制对象角是否是透明
 
   lockMovementX: false,
   // 为“ true”时，对象水平移动被锁定
