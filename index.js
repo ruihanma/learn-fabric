@@ -9,7 +9,7 @@ var circle = new fabric.Circle({
   // 圆的起始角度，顺时针方向偏移，应为度，
   // 这是一个疏忽。 在下一个主要版本中可能会更改为度
 
-  endAngle: (270 * Math.PI) / 180,
+  // endAngle: (270 * Math.PI) / 180,
   // 圆弧形的端角，应为度，这是一个疏忽。 在下一个主要版本中可能会更改为度
   // 注意 这里如果fill了颜色 那么形状会变成一个残月 而不是从中心点缺失的3/4个圆饼状
 
@@ -24,7 +24,7 @@ var circle = new fabric.Circle({
   height: 10,
   // 对象高度 圆形无效
 
-  radius: 50,
+  radius: 100,
   // 圆形的半径
 
   left: 100,
@@ -59,6 +59,25 @@ var circle = new fabric.Circle({
   stroke: `#f00`,
   // 定义后，将通过笔触渲染对象
   // 描个边 默认为1宽度
+
+  // strokeDashArray: [10],
+  // 指定对象笔划的虚线图案的数组（必须定义笔划）
+
+  // strokeDashOffset: [10],
+  // TODO 目前未知效果
+
+  strokeLineCap: `butt`,
+  // 对象笔画的线尾样式（“butt”，“round”，“square”之一）
+
+  strokeLineJoin: `miter`,
+  // 对象笔触的角样式（“ bevil”，“ round”，“ miter”之一）
+  // TODO 目前未知效果
+
+  strokeMiterLimit: 4,
+  // 对象笔划的最大斜接长度（用于strokeLineJoin =“ miter”）
+  // TODO 目前未知效果
+
+  strokeWidth: 10,
 
   // 对象自身样式 End //////////////////////////////////////////////////////////////////////
 
