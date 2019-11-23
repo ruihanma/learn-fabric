@@ -142,12 +142,16 @@ var circle = new fabric.Circle({
 
   hoverCursor: null,
   // 将鼠标悬停在画布上此对象时使用的默认光标值
-  // TODO 目前未察觉用处
+  // TODO 目前未知用处
 
   globalCompositeOperation: `source-over`,
   // 全局合成操作 默认为source-over
   // 用于画布globalCompositeOperation的复合规则
-  // TODO 目前未察觉用处
+  // TODO 目前未知用处
+
+  includeDefaultValues: true,
+  // 如果为false，则默认对象的值不包含在其序列化中
+  // TODO 目前未知用处
 
   // 导出
   excludeFromExport: false,
