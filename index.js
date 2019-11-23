@@ -2,7 +2,7 @@ var canvas = new fabric.Canvas('c');
 var circle = new fabric.Circle({
 
   // 对象自身样式 //////////////////////////////////////////////////////////////////////
-  angle: 45,
+  angle: 0,
   // 物体的旋转角度（度）旋转点是左上角
 
   startAngle: 0,
@@ -120,6 +120,20 @@ var circle = new fabric.Circle({
   // 设置为false时，对象不能成为事件的目标。 所有事件都通过它传播。 在v1.3.4中引入
   // 即 设置为false 就不能拖拽移动 不能拖拽缩放 不能拖拽旋转 ；可以点击控制角移动对象
 
+  flipX: false,
+  // 如果为true，则将对象渲染为水平翻转
+  // 在坐标系内 将X轴旋转180度
+
+  flipY: false,
+  // 如果为true，则将对象渲染为垂直翻转
+  // 在坐标系内 将Y轴旋转180度
+
+  globalCompositeOperation: `source-over`,
+  // 全局合成操作 默认为source-over
+  // 用于画布globalCompositeOperation的复合规则
+  // TODO 目前未察觉用处
+
+  // 导出
   excludeFromExport: false,
   // 如果为true，则不会以OBJECT / JSON格式导出对象
 
