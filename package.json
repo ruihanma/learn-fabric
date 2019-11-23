@@ -2,7 +2,7 @@
   "name": "learn-fabric",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "circle.js",
   "scripts": {
     "dev": "parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
