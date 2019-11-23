@@ -24,6 +24,9 @@ var circle = new fabric.Circle({
   height: 10,
   // 对象高度 圆形无效
 
+  width: 10000,
+  // 对象宽度 圆形无效
+
   radius: 100,
   // 圆形的半径
 
@@ -86,6 +89,11 @@ var circle = new fabric.Circle({
   top: 100,
   // 对象相对于画布顶部的距离。 请注意，默认情况下，它是相对于自身的顶部。 您可以通过设置originY = {top / center / bottom}来更改此设置
 
+  type: `circle`,
+  // 自己属于什么类型
+
+  visible: true,
+  // 设置为false时，对象不会在画布上渲染
 
   // 对象自身样式 End //////////////////////////////////////////////////////////////////////
 
