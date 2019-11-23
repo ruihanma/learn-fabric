@@ -21,10 +21,10 @@ var circle = new fabric.Circle({
   // 向后不兼容说明：此属性用于设置globalCompositeOperation直到v1.4.12（改用`fabric.Object＃globalCompositeOperation`）
   // TODO 目前未看出明显差别
 
-  height: 10,
+  height: 0,
   // 对象高度 圆形无效
 
-  width: 10000,
+  width: 0,
   // 对象宽度 圆形无效
 
   radius: 100,
