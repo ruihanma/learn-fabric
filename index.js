@@ -155,6 +155,12 @@ var circle = new fabric.Circle({
   shadow: new fabric.Shadow({color: `rgba(0,0,0,0.8)`, blur: 10}),
   // 阴影对象
 
+  skewX: 0,
+  // X轴对角的度数
+
+  skewY: 30,
+  // Y轴对角的度数
+
 
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
