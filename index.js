@@ -106,6 +106,9 @@ var circle = new fabric.Circle({
   lockScalingY: false,
   // 当为true时，对象垂直缩放被锁定 四角点失效
 
+  lockSkewingX: true,
+  // 为“ true”时，对象水平倾斜被锁定 按住shift可以倾斜操作
+
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
 
