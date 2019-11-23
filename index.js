@@ -149,8 +149,12 @@ var circle = new fabric.Circle({
   // 当设置为“ false”时，不能选择一个对象进行修改（使用基于点击的选择或基于组的选择）。 但是仍然有很多事情发生。
   // TODO 目前未看出 "但是仍然有很多事情发生" 指的是什么
 
-  selectionBackgroundColor: `pink`,
+  selectionBackgroundColor: null,
   // 选择对象的背景颜色。 处于活动状态时在对象后面的着色层。 不能与globalCompositeOperation方法混合使用。
+
+  shadow: new fabric.Shadow({color: `rgba(0,0,0,0.8)`, blur: 10}),
+  // 阴影对象
+
 
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
