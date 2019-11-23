@@ -114,8 +114,12 @@ var circle = new fabric.Circle({
   // 为“ true”时，对象垂直倾斜被锁定 边中间点失效
   // 按住shift可以倾斜操作
 
-  lockUniScaling: true,
+  lockUniScaling: false,
   // 当为true时，对象非均匀缩放被锁定 边中间点消失
+
+  minScaleLimit: 0,
+  // 对象的最小允许比例值
+
 
   // 外侧控制框 End //////////////////////////////////////////////////////////////////////
 
@@ -147,6 +151,7 @@ var circle = new fabric.Circle({
   // 剪裁操作 End //////////////////////////////////////////////////////////////////////
 
 
+  // 内部含有参数 //////////////////////////////////////////////////////////////////////
   // aCoords
   // 在画布对象中描述对象的角位置绝对坐标属性为tl，tr，bl，br，并描述四个主角。
   // 每个属性都是一个带有x，y，Fabric.Point实例的对象。
@@ -162,6 +167,17 @@ var circle = new fabric.Circle({
   // 如果键在此列表中，则将该对象标记为脏并在下一次渲染时刷新 含有的属性如下
   // 'fill stroke strokeWidth strokeDashArray width height paintFirst strokeUniform' +
   // 'strokeLineCap strokeDashOffset strokeLineJoin strokeMiterLimit backgroundColor clipPath'
+
+  matrixCache: null,
+  // 对象全变换矩阵的存储
+  // TODO 目前未知用处
+
+  moveCursor: null,
+  // 在画布上移动此对象时使用的默认光标值
+  // TODO 目前未知用处
+
+  // 内部含有参数 End //////////////////////////////////////////////////////////////////////
+
 
   dirty: false,
   // 当设置为“ true”时，对象的缓存将在下一次渲染调用时重新渲染。 从1.7.0开始
@@ -191,9 +207,7 @@ var circle = new fabric.Circle({
   // 如果为false，则默认对象的值不包含在其序列化中
   // TODO 目前未知用处
 
-  matrixCache: null,
-  // 对象全变换矩阵的存储
-  // TODO 目前未知用处
+
 
   // 导出
   excludeFromExport: false,
